@@ -53,11 +53,13 @@ public class player : MonoBehaviour
             {
                 jump();
                 _CanDBjump = true;
+               
             }
             else
             {
                 if (_CanDBjump)
                 {
+                    
                     _CanDBjump = false;
                     jump();
                 }
@@ -97,6 +99,7 @@ public class player : MonoBehaviour
         anim.SetBool("isGround", IsGround());
         anim.SetFloat("yVelocity",RBplayer.velocity.x);
         anim.SetBool("isWalling", _isWallsliding);
+        anim.SetBool("isDB", _CanDBjump);
     }
   
     private bool isWalldetected()
