@@ -18,6 +18,9 @@ public class player : MonoBehaviour
     private bool _canwallsliding = false;
 
 
+    //set animation
+
+
     //variable set animation
     private bool _isWallsliding;
 
