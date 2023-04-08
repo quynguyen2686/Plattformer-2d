@@ -18,10 +18,8 @@ public class player : MonoBehaviour
     private bool _canwallsliding = false;
 
 
-    //set animation
 
-
-    //variable set animation
+  
     private bool _isWallsliding;
 
     [Header("Collision info")]
@@ -126,6 +124,7 @@ public class player : MonoBehaviour
     }
     private void flip()
     {
+
         switch(_horizontal)
         {
             case > 0:
@@ -137,5 +136,6 @@ public class player : MonoBehaviour
                     break;
 
         }
+        
     }
 }
