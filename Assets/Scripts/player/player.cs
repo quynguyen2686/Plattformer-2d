@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -16,10 +18,6 @@ public class player : MonoBehaviour
     private Vector3 _baseScale;
     private bool _CanDBjump = false;
     private bool _canwallsliding = false;
-
-
-
-  
     private bool _isWallsliding;
 
     [Header("Collision info")]
@@ -28,7 +26,7 @@ public class player : MonoBehaviour
     [SerializeField] private LayerMask Groundlayer;
     [SerializeField] private float checkRadius;
 
-    //comit test github
+   private enum movementstate {idle,run,jumping,fall}
 
     private void Awake()
     {
@@ -94,12 +92,15 @@ public class player : MonoBehaviour
     }
     private void setAnimation()
     {
-        var movement = Mathf.Abs(RBplayer.velocity.x) +Mathf.Abs(RBplayer.velocity.y);
+        var movement = Mathf.Abs(RBplayer.velocity.x) + Mathf.Abs(RBplayer.velocity.y);
         anim.SetFloat("movement", movement);
         anim.SetBool("isGround", IsGround());
-        anim.SetFloat("yVelocity",RBplayer.velocity.x);
+        anim.SetFloat("yVelocity", RBplayer.velocity.x);
         anim.SetBool("isWalling", _isWallsliding);
         anim.SetBool("isDB", _CanDBjump);
+
+
+
     }
   
     private bool isWalldetected()
@@ -111,7 +112,7 @@ public class player : MonoBehaviour
 
         RBplayer.velocity = new Vector2(RBplayer.velocity.x, jumpPower);
     }
-  
+   
     private bool IsGround()
     {
         return Physics2D.OverlapCircle(Groundcheck.position, checkRadius, Groundlayer);
@@ -141,4 +142,8 @@ public class player : MonoBehaviour
         }
         
     }
+   
+   
+
+
 }

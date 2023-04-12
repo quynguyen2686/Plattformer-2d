@@ -49,7 +49,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -72,7 +72,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -321,15 +321,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Brown On (32x8)_5: 3059113826426795209
-      Brown On (32x8)_4: 6027122724756182200
-      Brown On (32x8)_6: 4722360788381041880
-      Brown On (32x8)_1: 113249620649802049
       Brown On (32x8)_0: -3932816638193255715
-      Brown On (32x8)_3: -8422671310359681190
-      Brown On (32x8)_7: -7345710839297778315
+      Brown On (32x8)_1: 113249620649802049
       Brown On (32x8)_2: -3965723481977160693
-  spritePackingTag: 
+      Brown On (32x8)_3: -8422671310359681190
+      Brown On (32x8)_4: 6027122724756182200
+      Brown On (32x8)_5: 3059113826426795209
+      Brown On (32x8)_6: 4722360788381041880
+      Brown On (32x8)_7: -7345710839297778315
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
   assetBundleName: 

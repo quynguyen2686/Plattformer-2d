@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Trapspike : MonoBehaviour
+public class DeadLocation : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
-
     {
-        if (collision.tag == "Player")
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Debug.Log("BING BONG");
+        
+        if(collision.gameObject.tag =="Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }
