@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SearchService;
@@ -11,6 +12,8 @@ public class Heath : MonoBehaviour
     private bool _isDead;
     public float currentHealth { get; private set; }
    [SerializeField] private GameManager gameManager;
+    public static event Action PlayerDead;
+
     private void Awake() 
     {
         currentHealth = staringhealth;
@@ -21,18 +24,15 @@ public class Heath : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, staringhealth);
         if (currentHealth <= 0 && !_isDead)
         {
-           
-                _isDead = true;
-                gameManager.GameOver();
-                anim.SetTrigger("isDead");
-                GetComponent<Playermovement>().enabled = false;
-
-          
+            _isDead = true;
+            PlayerDead?.Invoke();
+            anim.SetTrigger("isDead");
+         
         }
     }
            
 
-   public void addvaluehealth(float _value)
+    public void addvaluehealth(float _value)
     {
         currentHealth = Mathf.Clamp(currentHealth + _value, 0, staringhealth);
     }

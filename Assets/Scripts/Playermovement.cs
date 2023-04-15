@@ -22,6 +22,17 @@ public class Playermovement : MonoBehaviour
     {
         _baseScale = transform.localScale;
     }
+
+    private void OnEnable()
+    {
+        Heath.PlayerDead += OnPlayerDead;
+    }
+
+    private void OnDisable()
+    {
+        Heath.PlayerDead -= OnPlayerDead;
+    }
+
     private void Start()
     {
         RBplayer = GetComponent<Rigidbody2D>(); 
@@ -107,5 +118,10 @@ public class Playermovement : MonoBehaviour
                 break;
 
         }
+    }
+
+    private void OnPlayerDead()
+    {
+        enabled = false;
     }
 }
