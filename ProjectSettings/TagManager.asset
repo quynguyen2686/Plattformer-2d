@@ -46,11 +46,11 @@ TagManager:
   - name: Background
     uniqueID: 472998107
     locked: 0
-  - name: Ground
-    uniqueID: 2992398485
-    locked: 0
   - name: trap
     uniqueID: 941106515
+    locked: 0
+  - name: Ground
+    uniqueID: 2992398485
     locked: 0
   - name: Pickup
     uniqueID: 2880242335
