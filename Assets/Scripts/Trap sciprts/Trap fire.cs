@@ -8,7 +8,7 @@ public class Trapfire : MonoBehaviour
     private bool isOn;
     [SerializeField] private float coolDown;
     private float coolDowntimer;
-
+    [SerializeField] private BoxCollider2D collider;
  
 
     private void Start()
@@ -23,6 +23,7 @@ public class Trapfire : MonoBehaviour
             isOn = !isOn;
             coolDowntimer = coolDown;
         }
+        collider.enabled = isOn;
         anim.SetBool("isOn", isOn);
     }
 }

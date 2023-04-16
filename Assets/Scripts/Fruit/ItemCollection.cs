@@ -10,11 +10,12 @@ public class ItemCollection: MonoBehaviour
     private float heathvalue = 1f;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("PineApple"))
+        if (collision.CompareTag("PineApple"))
         {
             Destroy(collision.gameObject);
             point++;
-            pointText.text = "Point: " + point;
+            pointText.text = "x" + point;
+            
             GetComponent<Heath>().addvaluehealth(heathvalue);
         }  
         

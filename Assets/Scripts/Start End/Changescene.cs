@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Common;
 
 public class Changescene : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Changescene : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene("Level2");
+            SceneManager.LoadScene(GameConstants.LV2);
         }
     }
 }
