@@ -10,7 +10,12 @@ public class Changescene : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene(GameConstants.LV2);
+            Invoke("Finishgame", 1.5f);
+        
         }
+    }
+    private void Finishgame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }

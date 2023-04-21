@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpikeballRotate_180 : MonoBehaviour
 {
-     private float speed = -1.5f;
+     private float speed = -0.8f;
 
     // Update is called once per frame
     void Update()

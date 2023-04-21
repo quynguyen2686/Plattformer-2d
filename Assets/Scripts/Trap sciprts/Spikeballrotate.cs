@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Spikeballrotate : MonoBehaviour
 {
-     private float speed = 1.5f;
+     private float speed = 0.5f;
 
 
-    // Update is called once per frame
+    // Update is called once per frame  
     void Update()
     {
         transform.Rotate(0,0,speed);

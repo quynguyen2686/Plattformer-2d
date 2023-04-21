@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Common;
 using System;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject gameoverUI;
+ 
+   
 
     private void OnEnable()
     {
@@ -18,12 +21,13 @@ public class GameManager : MonoBehaviour
     {
         Heath.PlayerDead -= GameOver;
     }
-
+    
     /// <summary>
     /// 
     /// </summary>
     private void GameOver()
-    {   
+    {
+       
         gameoverUI.SetActive(true);
     }  
 

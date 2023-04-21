@@ -6,6 +6,7 @@ TagManager:
   tags:
   - PineApple
   - Trap
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -14,7 +15,7 @@ TagManager:
   - Water
   - UI
   - player
-  - 
+  - Enemy
   - 
   - 
   - 
