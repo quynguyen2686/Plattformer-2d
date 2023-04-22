@@ -13,6 +13,7 @@ public class Heath : MonoBehaviour
     public float currentHealth { get; private set; }
    [SerializeField] private GameManager gameManager;
     public static event Action PlayerDead;
+    [SerializeField] private AudioSource Hurt;
 
     private void Awake() 
     {
@@ -22,6 +23,7 @@ public class Heath : MonoBehaviour
     public void takedamage(float _damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, staringhealth);
+        Hurt.Play();
         if (currentHealth <= 0 && !_isDead)
         {
             _isDead = true;

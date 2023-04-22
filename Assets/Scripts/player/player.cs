@@ -25,6 +25,7 @@ public class player : MonoBehaviour
     [SerializeField] private Transform wallcheck;
     [SerializeField] private LayerMask Groundlayer;
     [SerializeField] private float checkRadius;
+    [SerializeField] private AudioSource jumpEffect;
 
    private enum movementstate {idle,run,jumping,fall}
 
@@ -109,7 +110,7 @@ public class player : MonoBehaviour
     }
     private void jump()
     {
-
+        jumpEffect.Play();
         RBplayer.velocity = new Vector2(RBplayer.velocity.x, jumpPower);
     }
    

@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
     private void OnEnable()
     {
+       
         Heath.PlayerDead += GameOver;
     }
 

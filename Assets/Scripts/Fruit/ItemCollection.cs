@@ -7,6 +7,7 @@ public class ItemCollection: MonoBehaviour
 {
     private int point;
     [SerializeField] private Text pointText;
+    [SerializeField] private AudioSource collectionEffect;
     private float heathvalue = 1f;
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -15,7 +16,7 @@ public class ItemCollection: MonoBehaviour
             Destroy(collision.gameObject);
             point++;
             pointText.text = "x" + point;
-            
+            collectionEffect.Play();    
             GetComponent<Heath>().addvaluehealth(heathvalue);
         }  
         
