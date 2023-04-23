@@ -23,16 +23,25 @@ public class Heath : MonoBehaviour
     public void takedamage(float _damage)
     {
         currentHealth = Mathf.Clamp(currentHealth - _damage, 0, staringhealth);
+        if(currentHealth > 0)
+        {
         Hurt.Play();
+        anim.SetTrigger("isHit");
+
+        }
         if (currentHealth <= 0 && !_isDead)
         {
-            _isDead = true;
-            PlayerDead?.Invoke();
             anim.SetTrigger("isDead");
-         
         }
     }
-           
+
+    private void PlayerDies()
+    {
+        PlayerDead?.Invoke();
+        _isDead = true;
+       
+    }
+
 
     public void addvaluehealth(float _value)
     {

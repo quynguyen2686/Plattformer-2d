@@ -48,18 +48,19 @@ public class player : MonoBehaviour
             {
                 JumpFromWall();
             }
+
             if (IsGround())
             {
+                anim.SetTrigger("jump");
                 jump();
                 _CanDBjump = true;
-               
             }
             else
             {
                 if (_CanDBjump)
                 {
-                    
                     _CanDBjump = false;
+                    anim.SetTrigger("doubleJump");
                     jump();
                 }
             }
@@ -96,12 +97,8 @@ public class player : MonoBehaviour
         var movement = Mathf.Abs(RBplayer.velocity.x) + Mathf.Abs(RBplayer.velocity.y);
         anim.SetFloat("movement", movement);
         anim.SetBool("isGround", IsGround());
-        anim.SetFloat("yVelocity", RBplayer.velocity.x);
+
         anim.SetBool("isWalling", _isWallsliding);
-        anim.SetBool("isDB", _CanDBjump);
-
-
-
     }
   
     private bool isWalldetected()

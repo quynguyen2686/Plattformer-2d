@@ -9,12 +9,8 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     public GameObject gameoverUI;
- 
-   
-
     private void OnEnable()
     {
-       
         Heath.PlayerDead += GameOver;
     }
 
@@ -28,7 +24,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void GameOver()
     {
-       
+        
         gameoverUI.SetActive(true);
     }  
 

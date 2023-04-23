@@ -121,8 +121,8 @@ MonoBehaviour:
   RBplayer: {fileID: 8570452783863864665}
   speed: 10
   jumpPower: 10
-  xJump: 5
-  yJump: 8
+  xJump: 7
+  yJump: 12
   wallSlidingspeed: 4
   Groundcheck: {fileID: 655613213630452772}
   wallcheck: {fileID: 4503681528066461111}
